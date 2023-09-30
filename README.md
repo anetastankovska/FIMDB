@@ -1,2 +1,2 @@
-# movies-app
-movies-app
+# FIMDB
+Fake IMDB app

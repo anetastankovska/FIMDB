@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Primary color (deeppurple) and accent color (amber) from Angular Material
+$primary-color: mat-palette($mat-deep-purple);
+$accent-color: mat-palette($mat-amber);
+
+// Define the primary and accent themes using the primary and accent colors
+$primary-theme: mat-light-theme($primary-color, $accent-color);
+$accent-theme: mat-dark-theme($accent-color, $primary-color);
+
+// Text and background colors
+$primary-text: $primary-theme-foreground;
+$secondary-text: $accent-theme-foreground;
+

@@ -1,1 +1,30 @@
-<p>navigation works!</p>
+<mat-toolbar>
+    <img src="../../../../assets/logo.png">
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         routerLink="/"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+      <a mat-tab-link
+         routerLink="/movies"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Movies
+      </a>
+      <a mat-tab-link
+         routerLink="/login"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Login
+      </a>
+      <a mat-tab-link
+         routerLink="/register"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Register
+      </a>
+    </nav>
+  </mat-toolbar>
+  

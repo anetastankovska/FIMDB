@@ -1,0 +1,58 @@
+@use '../../../../styles.scss';
+/* footer.component.scss */
+/* footer.component.scss */
+
+/* Style the footer container */
+footer {
+  background-color: styles.$color-white; /* Adjust the background color as needed */
+  color: styles.$color-info;
+  padding: 24px 0;
+  text-align: center;
+}
+
+/* Style the footer content container */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Style each footer column */
+.footer-column {
+  flex: 1;
+  margin-right: 24px;
+}
+
+.mid {
+  flex: 2;
+}
+
+/* Style the social icons */
+.social-icon, .fab {
+  font-size: 2.5em;
+  // margin-ight: 0.33em;
+  // color: #0275dd; /* Adjust the color as needed */
+  color: styles.$color-steel;
+  margin-right: 1em;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    // color: #9400e7; /* Adjust the hover color as needed */
+    text-shadow: 1px 1px 2px black;
+    color: styles.$color-warning;
+  }
+}
+
+// .fab {
+//   font-size: 2em;
+// }
+
+/* Style the copyright notice */
+.copyright {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #777; /* Adjust the text color as needed */
+}

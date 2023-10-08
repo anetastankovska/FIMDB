@@ -1,0 +1,14 @@
+<mat-card class="movie-card">
+    <mat-card-header>
+      <mat-card-title>{{ movie.name }}</mat-card-title>
+      <mat-card-subtitle>Genre: {{ movie.genre }}</mat-card-subtitle>
+      <mat-card-subtitle>Year: {{ movie.year }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ movie.description | textShorten: 200}}</p>
+      <div class="rating">
+        <p>Rating: {{ movie.rating.averageValue }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

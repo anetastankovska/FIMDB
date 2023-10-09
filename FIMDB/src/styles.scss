@@ -4,7 +4,7 @@
 // /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 // // Primary color (deeppurple) and accent color (amber) from Angular Material
 // $primary-color: mat-palette($mat-deep-purple);
@@ -31,9 +31,12 @@ $color-white: #f7f7f7;
 $color-black: #161616; 
 $color-border: lightgray; 
 $button-disabled: #ccc; 
-$active-route: goldenrod; 
+$color-gold: #D4AF37; 
 $home-background: #f0f0f0; 
-$color-steel: steelblue;
+$color-blue: steelblue;
+$color-gray: #7A7F80;
+$color-light-gray: e7e8e9;
+
 
 /* Mixins */
 @mixin flex-navbar() {

@@ -5,12 +5,13 @@
   img {
     height: 100%;
   }
-
+  
+  z-index: 1;
   color: styles.$color-white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-    background-color: steelblue;
+    background-color: styles.$color-gray;
   /* Apply hover effect to the text within .mat-toolbar */
 
   // Style the link

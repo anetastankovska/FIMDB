@@ -38,22 +38,18 @@
   .rating {
     display: flex;
     align-items: center;
-    margin-top: 16px;
+    margin: 16px 0;
     font-size: 16px;
   
     .star-icon {
       font-size: 24px; /* Adjust the size as needed */
-      color: #ffc107; /* Color of the stars */
+      color: styles.$color-gold; /* Color of the stars */
       margin-right: 4px; /* Spacing between stars */
     }
   
     p {
       margin: 0 0 0 10px;
       font-weight: bold;
-    }
-  
-    .filled {
-      color: #ffc107; /* Color for filled stars */
     }
   }
 

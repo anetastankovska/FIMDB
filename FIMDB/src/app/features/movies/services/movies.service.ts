@@ -1,40 +1,43 @@
 import { Injectable } from '@angular/core';
 import { MoviesApiService } from './movies-api.service';
-import { catchError } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { catchError, finalize } from 'rxjs/operators';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LoggerService } from 'src/app/core/services/logger.service';
 import { Movie } from '../interfaces/movie.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MoviesService {
+  isFetching = new BehaviorSubject<boolean>(false);
 
   constructor(
     private readonly moviesApiService: MoviesApiService,
     private readonly loggerService: LoggerService
-    ) { }
+  ) {}
 
   getAllMovies(): Observable<Movie[] | null> {
-    return this.moviesApiService.getMovies()
-      .pipe(
-        catchError(error => this.handleError(error, []))
-      );
+    this.isFetching.next(true);
+
+    return this.moviesApiService.getMovies().pipe(
+      catchError((error) => this.handleError(error, [])),
+      finalize(() => this.isFetching.next(false))
+    );
   }
 
   getMovieById(movieId: string): Observable<Movie | null> {
-    return this.moviesApiService.getMovieById(movieId)
-      .pipe(
-        catchError(error => this.handleError(error, null))
-      );
+    this.isFetching.next(true);
+    return this.moviesApiService.getMovieById(movieId).pipe(
+      catchError((error) => this.handleError(error, null)),
+      finalize(() => this.isFetching.next(false))
+    );
   }
 
   rateMovie(movieId: string, rating: number): Observable<Movie | null> {
     const ratingObject = { ratingValue: rating };
-    return this.moviesApiService.rateMovie(movieId, ratingObject)
-      .pipe(
-        catchError(error => this.handleError(error, null))
-      );
+    return this.moviesApiService
+      .rateMovie(movieId, ratingObject)
+      .pipe(catchError((error) => this.handleError(error, null)));
   }
 
   private handleError(error: any, returnValue: any): Observable<any> {
@@ -42,4 +45,3 @@ export class MoviesService {
     return of(returnValue);
   }
 }
-

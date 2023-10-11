@@ -3,7 +3,7 @@ import { MoviesApiService } from './movies-api.service';
 import { catchError, finalize } from 'rxjs/operators';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LoggerService } from 'src/app/core/services/logger.service';
-import { Movie } from '../interfaces/movie.interface';
+import { Movie, UserRating } from '../interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class MoviesService {
     private readonly loggerService: LoggerService
   ) {}
 
-  getAllMovies(): Observable<Movie[] | null> {
+  getAllMovies(): Observable<Movie[] | []> {
     this.isFetching.next(true);
 
     return this.moviesApiService.getMovies().pipe(
@@ -33,11 +33,10 @@ export class MoviesService {
     );
   }
 
-  rateMovie(movieId: string, rating: number): Observable<Movie | null> {
-    const ratingObject = { ratingValue: rating };
-    return this.moviesApiService
-      .rateMovie(movieId, ratingObject)
-      .pipe(catchError((error) => this.handleError(error, null)));
+  rateMovie = (movieId: string, rating: UserRating): Observable<Movie | null> => {
+    return this.moviesApiService.rateMovie(movieId, rating).pipe(
+      catchError((error) => this.handleError(error, null))
+    )
   }
 
   private handleError(error: any, returnValue: any): Observable<any> {

@@ -1,7 +1,13 @@
-<div class="movie-details-container">
+<div *ngIf="movie" class="movie-details-container">
   <div class="movie-details-header">
     <h2>{{ movie.name }}</h2>
-    <p>{{ movie.genre }} - {{ movie.year }}</p>
+    <div class="chips-container">
+      <mat-chip-listbox>
+        <mat-chip *ngFor="let genre of movie.genre">{{ genre }}</mat-chip>
+      </mat-chip-listbox>
+    </div>
+    <p>Year <span>{{ movie.year }}</span></p>
+    <p>Director <span>{{ movie.director }}</span></p>
   </div>
   <div class="movie-details-content">
     <p>{{ movie.description }}</p>
@@ -11,16 +17,14 @@
         <mat-icon class="star-icon">star</mat-icon>
       </ng-container>
       <mat-icon class="star-icon" *ngIf="halfStar">star_half</mat-icon>
-      <p>{{ movie.rating.averageValue }}</p>
+      <p *ngIf="movie.rating">{{ movie.rating.averageValue }}</p>
     </div>   
 
     <mat-card class="vote-card">
       <mat-card-content>
         <h2>Rate Movie</h2>
         <div class="label-container">
-          <label class="name-label"
-            >Your rating:
-          </label>
+          <label class="name-label">Your rating:</label>
           <label class="value-label">{{ slider.value }}</label>
         </div>
         <mat-slider

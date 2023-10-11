@@ -5,14 +5,8 @@
   img {
     height: 100%;
   }
-  
-  z-index: 1;
-  color: styles.$color-white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-    background-color: styles.$color-gray;
-  /* Apply hover effect to the text within .mat-toolbar */
+
+  @include styles.flex-navbar();
 
   // Style the link
   a {
@@ -30,6 +24,6 @@
         color: styles.$color-warning;
         text-shadow: 1px 1px 2px black;
     }
-    
+
   }
 }

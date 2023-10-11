@@ -1,4 +1,4 @@
-<mat-card class="movie-card">
+<mat-card class="movie-card" [routerLink]="'./' + movie.id + '/details'">
     <mat-card-header>
       <mat-card-title>{{ movie.name }}</mat-card-title>
       <mat-card-subtitle>Genre: {{ movie.genre }}</mat-card-subtitle>
@@ -10,5 +10,6 @@
         <p>Rating: {{ movie.rating.averageValue }}</p>
       </div>
     </mat-card-content>
+    <button mat-raised-button>Details</button>
   </mat-card>
-  
+

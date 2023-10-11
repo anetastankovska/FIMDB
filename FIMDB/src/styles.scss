@@ -24,30 +24,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 /* Global Colors */
 $color-primary:  #a37d45;
 $color-info: #482556;
-$color-success: #5cb55c; 
+$color-success: #5cb55c;
 $color-warning: #ebad4e;
-$color-danger: #ff534f; 
-$color-white: #f7f7f7; 
-$color-black: #161616; 
-$color-border: lightgray; 
-$button-disabled: #ccc; 
-$color-gold: #D4AF37; 
-$home-background: #f0f0f0; 
+$color-danger: #ff534f;
+$color-white: #f7f7f7;
+$color-black: #161616;
+$color-border: lightgray;
+$button-disabled: #ccc;
+$color-gold: #D4AF37;
+$home-background: #f0f0f0;
 $color-blue: steelblue;
 $color-gray: #7A7F80;
-$color-light-gray: e7e8e9;
+$color-light-gray: #e7e8e9;
+$color-movie-details-background: #ebeced;
 
 
 /* Mixins */
 @mixin flex-navbar() {
+  z-index: 1;
+  color: $color-white;
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
+  background-color: $color-gray;
 }
 
 @mixin flex() {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }

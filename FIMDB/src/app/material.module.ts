@@ -14,6 +14,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -32,7 +34,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatTooltipModule,
     MatBadgeModule,
     MatIconModule,
-    MatSliderModule
+    MatSliderModule,
+    MatProgressSpinnerModule,
+    MatChipsModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -48,7 +52,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatTooltipModule,
     MatBadgeModule,
     MatIconModule,
-    MatSliderModule
+    MatSliderModule,
+    MatProgressSpinnerModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }

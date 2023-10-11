@@ -1,1 +1,11 @@
-<p>movies-list works!</p>
+<div>
+  <div class="movies-container" *ngIf="!isFetching; else loading">
+    <app-movie-card class="movieCard" *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+  </div>
+
+  <ng-template #loading>
+    <!-- Spinner/loader for better UX -->
+    Loading...
+    <mat-progress-spinner></mat-progress-spinner>
+  </ng-template>
+</div>

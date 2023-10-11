@@ -1,7 +1,7 @@
 /* movie-card.component.scss */
 
 /* Import your global stylesheet variables */
-@use '../../../../../styles.scss';
+@use '../../../../../../styles.scss';
 
 .movie-card {
   background-color: styles.$color-white;
@@ -10,6 +10,7 @@
   padding: 20px;
   margin: 20px;
   max-width: 600px;
+  max-height: 35em;
 
   mat-card-header {
     background-color: styles.$color-gold;
@@ -33,14 +34,15 @@
       font-size: 18px;
       color: styles.$color-black;
       line-height: 1.5;
+      height: 100px;
     }
 
     .rating {
-      margin-top: 16px;
-      font-size: 20px;
+      margin-top: 10px;
+      font-size: 18px;
 
       p {
-        color: styles.$color-white;
+        color: styles.$color-gray;
         font-weight: bold;
       }
     }

@@ -1,7 +1,10 @@
 export interface Movie {
+  id: string;
   name: string;
-  genre: string;
+  genre: string[];
+  description: string;
   director: string;
+  year: number;
   rating: Rating;
   imageUrl: string;
 }

@@ -1,4 +1,5 @@
 <div *ngIf="movie" class="movie-details-container">
+  <button mat-raised-button routerLink="/movies"><- Back</button>
   <div class="movie-details-header">
     <h2>{{ movie.name }}</h2>
     <div class="chips-container">
@@ -17,9 +18,9 @@
         <mat-icon class="star-icon">star</mat-icon>
       </ng-container>
       <mat-icon class="star-icon" *ngIf="halfStar">star_half</mat-icon>
-      <p *ngIf="movie.rating">{{ movie.rating.averageValue }}</p>
+      <p *ngIf="movie.rating">{{ movie.rating.averageValue | number: "1.1-1" }}</p>
     </div>   
-
+    
     <mat-card class="vote-card">
       <mat-card-content>
         <h2>Rate Movie</h2>
@@ -40,7 +41,7 @@
       <button
         mat-raised-button
         color="primary"
-        (click)="submitVote(slider.value)"
+        (click)="submitVote(movie.id, slider.value)"
       >
         Submit rating
       </button>

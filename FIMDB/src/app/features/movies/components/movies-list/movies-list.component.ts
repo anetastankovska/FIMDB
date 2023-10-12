@@ -20,5 +20,7 @@ export class MoviesListComponent implements OnInit {
       this.movies = movies
       console.log(movies)
     })
+
+    this.moviesService.isFetching.subscribe((isFetching) => (this.isFetching = isFetching));
   }
 }

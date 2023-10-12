@@ -9,6 +9,7 @@ import { Movie } from "../../../interfaces/movie.interface";
 export class MovieCardComponent {
   @Input() movie: Movie = {} as Movie;
 
+
   // movie = {
   //   id: "64e642d893169b2d5c0d6e28",
   //   name: "John Wick - Chapter 4",

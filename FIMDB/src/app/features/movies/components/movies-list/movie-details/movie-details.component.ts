@@ -12,7 +12,7 @@ export class MovieDetailsComponent implements OnInit {
 
   movie: Movie | null = {} as Movie;
 
-movieId: string;
+  movieId: string;
 
   fullStars: number;
   halfStar: boolean;
@@ -36,7 +36,7 @@ movieId: string;
   }
 
   fetchMovieDetails(movieId: string): void {
-    this.moviesService.getMovieById('64e489b11540095f145c6a07').subscribe({
+    this.moviesService.getMovieById(movieId).subscribe({
       next: (movieData) => {
         this.movie = movieData;
         console.log(movieData?.rating.averageValue)
@@ -45,7 +45,6 @@ movieId: string;
       },
       error: (error) => {
         console.error('Error fetching movie details:', error);
-        // Handle the error as needed, e.g., display an error message.
       }
     });
   }
@@ -57,7 +56,7 @@ movieId: string;
       this.fullStars = Math.floor(this.movie.rating.averageValue);
       return this.fullStars;
     }
-    return 0; // or another default value if movie or its properties are null or undefined
+    return 0;
   }
 
 // Calculate whether to show a half star
@@ -66,7 +65,7 @@ movieId: string;
       const decimalValue: number = this.movie.rating.averageValue % 1;
       return decimalValue >= 0.5 ? (this.halfStar = true) : (this.halfStar = false);
     }
-    return false; // or another default value if movie or its properties are null or undefined
+    return false;
   }
 
   // Create an array with 10 elements (representing the maximum number of stars)
@@ -74,7 +73,13 @@ movieId: string;
     return Array(n);
   }
 
-  submitVote = (vote: string): void => {
-    console.log(vote);
+  submitVote = (movieId: string, vote: string): void => {
+    const voteObj = {ratingValue : parseFloat(vote)}
+    console.log(voteObj);
+    this.moviesService.rateMovie(movieId, voteObj).subscribe(movie => {
+      console.log(movie); 
+      this.movie = movie; 
+      this.showFilledStars(); 
+      this.showHalfStar()});
   }
 }

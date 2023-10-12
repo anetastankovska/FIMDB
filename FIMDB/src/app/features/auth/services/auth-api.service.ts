@@ -10,14 +10,13 @@ export class AuthApiService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
-  private readonly URL: string = 'http://localhost:4000/api/users';
+  private readonly URL: string = 'http://localhost:4000/api/users/register';
 
   login = (loginData: LoginUser): Observable<User> => {
   return this.httpClient.post<User>(`${this.URL}/login`, loginData);
   }
 
   register = (registerData: RegisterUser): Observable<User> => {
-    return this.httpClient.post<User>(this.URL, registerData);
+    return this.httpClient.post<User>(`${this.URL}/register`, registerData);
   }
-
 }

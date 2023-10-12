@@ -7,7 +7,7 @@
   padding: 3%;
   background-color: styles.$color-movie-details-background;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px styles.$color-gray;
 }
 
 .movie-details-header {
@@ -23,12 +23,12 @@
     font-size: 28px;
     margin: 0;
     padding: 10px;
-    color: #333;
+    color: styles.$color-black;
   }
 
   p {
     font-size: 20px;
-    color: #777;
+    color: styles.$color-gray;
     margin: 0;
     padding: 6px;
   }
@@ -39,7 +39,7 @@
 
   p {
     font-size: 18px;
-    color: #333;
+    color: styles.$color-black;
   }
 
   .rating {
@@ -52,7 +52,7 @@
       font-size: 24px; /* Adjust the size as needed */
       color: styles.$color-gold; /* Color of the stars */
       margin-right: 4px; /* Spacing between stars */
-      text-shadow: 1px 1px 1px darkslategray;
+      text-shadow: 1px 1px 1px styles.$color-dark-slate-gray;
     }
 
     p {
@@ -63,7 +63,7 @@
 
   .vote-card {
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px styles.$color-gray;
     padding: 16px;
 
     h2 {

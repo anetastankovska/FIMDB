@@ -1,22 +1,5 @@
-// /* Import Angular Material theming */
-// @import 'material/theme.scss';
-// @import "../setup/variables";
-// /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
+html, body { height: 100vh; min-height: 100%; margin: 0; padding: 0;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
-
-// // Primary color (deeppurple) and accent color (amber) from Angular Material
-// $primary-color: mat-palette($mat-deep-purple);
-// $accent-color: mat-palette($mat-amber);
-
-// // Define the primary and accent themes using the primary and accent colors
-// $primary-theme: mat-light-theme($primary-color, $accent-color);
-// $accent-theme: mat-dark-theme($accent-color, $primary-color);
-
-// // Text and background colors
-// $primary-text: $primary-theme-foreground;
-// $secondary-text: $accent-theme-foreground;
 
 // /* styles.scss */
 
@@ -36,6 +19,7 @@ $home-background: #f0f0f0;
 $color-blue: steelblue;
 $color-gray: #7A7F80;
 $color-light-gray: #e7e8e9;
+$color-dark-slate-gray: darkslategray;
 $color-movie-details-background: #ebeced;
 
 

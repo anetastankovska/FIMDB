@@ -3,17 +3,19 @@ import { AuthApiService } from './auth-api.service';
 import { LoggerService } from 'src/app/core/services/logger.service';
 import { LoginUser, RegisterUser, User } from '../interfaces/user.interface';
 import { BehaviorSubject, Observable, catchError, finalize, of, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isFetching = new BehaviorSubject<boolean>(false);
-  currentUser = new BehaviorSubject<User | null>(null);
+  currentUser$ = new BehaviorSubject<User | null>(null);
 
   constructor(
     private readonly authApiService: AuthApiService,
-    private readonly loggerService: LoggerService
+    private readonly loggerService: LoggerService,
+    private readonly router: Router
   ) { }
 
   login = (loginData: LoginUser): Observable<User | null> => {
@@ -23,8 +25,8 @@ export class AuthService {
       tap((user) => {
         if (user) {
           // Login successful, update the currentUser to true
-          this.currentUser.next(user);
-          this.currentUser.subscribe(res => console.log(res))
+          this.currentUser$.next(user);
+          this.currentUser$.subscribe(res => console.log(res))
         }
       }),
       catchError((error) => this.handleError(error, null)),
@@ -39,13 +41,18 @@ export class AuthService {
       tap((user) => {
         if (user) {
           // Register successful, update the currentUser to true
-          this.currentUser.next(user);
-          this.currentUser.subscribe(res => console.log(res));
+          this.currentUser$.next(user);
+          this.currentUser$.subscribe(res => console.log(res));
         }
       }),
       catchError((error) => this.handleError(error, null)),
       finalize(() => this.isFetching.next(false))
     );
+  }
+
+  logout = () => {
+    this.currentUser$.next(null);
+    // this.router.navigate(['']);
   }
 
   private handleError(error: any, returnValue: any): Observable<any> {

@@ -1,11 +1,12 @@
-<div>
-  <div class="movies-container" *ngIf="!isFetching; else loading">
-    <app-movie-card class="movieCard" *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+<div class="movies-container">
+  <div class="movies-card-container" *ngIf="!isFetching; else loading">
+      <app-movie-card class="movieCard" *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
   </div>
 
   <ng-template #loading>
-    <!-- Spinner/loader for better UX -->
-    Loading...
-    <mat-progress-spinner></mat-progress-spinner>
+      <mat-spinner class="spinner"></mat-spinner>
   </ng-template>
 </div>
+
+
+

@@ -1,21 +1,26 @@
-h1 {
+.login-container {
+  height: 72%;
+  min-height: 72%;
+
+  h1 {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 
-.form-container {
+  .form-container {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40vh; /* Adjust to your desired container height */
 
-  mat-form-field {
-    display: flex;
-    width: 50vw;
-}
-  
-  button {
-    margin-top: 16px; /* Add spacing if needed */
+    mat-form-field {
+      display: flex;
+      width: 50vw;
+    }
+
+    button {
+      margin-top: 16px;
+    }
   }
 }

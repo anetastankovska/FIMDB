@@ -1,51 +1,41 @@
-@use "../../../../styles.scss";
+@use '../../../../styles.scss';
 
-/* Style the footer container */
 footer {
-  background-color: styles.$color-light-gray; /* Adjust the background color as needed */
-  color: styles.$color-info;
-  padding: 24px 0;
-  text-align: center;
+    background-color: styles.$color-light-gray; /* Adjust the background color as needed */
+    color: styles.$color-info;
+    text-align: center;
+    line-height: 0.5em;
+    padding: 1em;
+  
+    /* Style the footer content container */
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      height: 120px;
+      margin: 0 auto;
 
-  /* Style the footer content container */
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    height: 80px;
-    margin: 0 auto;
-    padding: 16px 0px;
-  }
-
-  /* Style each footer column */
-  .footer-column {
-    flex: 1;
-  }
-
-  .mid {
-    flex: 2;
-  }
-
-  /* Style the social icons */
-  .social-icon,
-  .fab {
-    font-size: 2.6em;
-    color: styles.$color-blue;
-    margin-right: 1em;
-    cursor: pointer;
-    transition: all 0.2s;
-    &:hover {
-      // color: #9400e7; /* Adjust the hover color as needed */
-      text-shadow: 1px 1px 2px styles.$color-black;
-      color: styles.$color-warning;
+    }
+  
+    /* Style the social icons */
+    .social-icon,
+    .fab {
+      font-size: 2.6em;
+      color: styles.$color-blue;
+      margin-right: 1em;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        // color: #9400e7; /* Adjust the hover color as needed */
+        text-shadow: 1px 1px 2px styles.$color-black;
+        color: styles.$color-warning;
+      }
     }
   }
-}
-
-/* Style the copyright notice */
-.copyright {
-  margin-top: 24px;
-  font-size: 16px;
-  color: styles.$color-gray; /* Adjust the text color as needed */
-}
+  
+  /* Style the copyright notice */
+  .copyright {
+    font-size: 16px;
+    color: styles.$color-gray; /* Adjust the text color as needed */
+  }

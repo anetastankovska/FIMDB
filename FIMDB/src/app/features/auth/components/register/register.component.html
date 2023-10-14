@@ -1,19 +1,24 @@
-<h1>Register</h1>
-<form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="form-container">
+<div class="register-container">
+  <h1>Register</h1>
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="onRegister()"
+    class="form-container"
+  >
     <mat-form-field appearance="outline">
-        <mat-label>First name: </mat-label>
-        <input matInput formControlName="firstName" />
-        <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')"
-          >The first name is required</mat-error
-        >
+      <mat-label>First name: </mat-label>
+      <input matInput formControlName="firstName" />
+      <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')"
+        >The first name is required</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>Last name: </mat-label>
-        <input matInput formControlName="lastName" />
-        <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')"
-          >The last name is required</mat-error
-        >
+      <mat-label>Last name: </mat-label>
+      <input matInput formControlName="lastName" />
+      <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')"
+        >The last name is required</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -26,7 +31,7 @@
         >The email is not valid</mat-error
       >
     </mat-form-field>
-  
+
     <mat-form-field appearance="outline">
       <mat-label>Password: </mat-label>
       <input matInput type="password" formControlName="password" />
@@ -37,5 +42,8 @@
         >The password is is not valid</mat-error
       >
     </mat-form-field>
-    <button type="submit" [disabled]="registerForm.invalid" mat-raised-button>REGISTER</button>
+    <button type="submit" [disabled]="registerForm.invalid" mat-raised-button>
+      REGISTER
+    </button>
   </form>
+</div>

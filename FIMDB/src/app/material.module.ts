@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
@@ -17,44 +16,28 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 
+const modules = [  
+  CommonModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatCardModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatBadgeModule,
+  MatIconModule,
+  MatSliderModule,
+  MatProgressSpinnerModule,
+  MatChipsModule
+]
+
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    // BrowserAnimationsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule,
-    MatTooltipModule,
-    MatBadgeModule,
-    MatIconModule,
-    MatSliderModule,
-    MatProgressSpinnerModule,
-    MatChipsModule
-  ],
-  exports: [
-    // BrowserAnimationsModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule,
-    MatTooltipModule,
-    MatBadgeModule,
-    MatIconModule,
-    MatSliderModule,
-    MatProgressSpinnerModule,
-    MatChipsModule
-  ]
+  imports: modules,
+  exports: modules,
 })
 export class MaterialModule { }

@@ -5,11 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieCardComponent } from './components/movies-list/movie-card/movie-card.component';
 import { MovieDetailsComponent } from './components/movies-list/movie-details/movie-details.component';
-import { TextShortenPipe } from './pipes/text-shorten.pipe';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
-
-
+import { TextShortenPipe } from './pipes/text-shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +21,7 @@ import { CoreModule } from 'src/app/core/core.module';
     MoviesRoutingModule,
     MaterialModule,
     CoreModule,
-    HttpClientModule
   ]
 })
 export class MoviesModule { }
+

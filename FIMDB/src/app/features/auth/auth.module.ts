@@ -5,7 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from '../../core/components/not-found/not-found.component';
 
 
 

@@ -1,14 +1,24 @@
-<mat-card class="movie-card" [routerLink]="'./' + movie.id + '/details'">
+<div class="movie-card-container">
+  <mat-card class="movie-card">
     <mat-card-header>
       <mat-card-title>{{ movie.name }}</mat-card-title>
-      <mat-card-subtitle>Genre: {{ movie.genre }}</mat-card-subtitle>
+      <mat-card-subtitle
+        >Genre:
+        <span *ngFor="let genre of movie.genre">
+          {{ genre }} |</span
+        ></mat-card-subtitle
+      >
       <mat-card-subtitle>Year: {{ movie.year }}</mat-card-subtitle>
-      <mat-card-subtitle>Rating: {{ movie.rating.averageValue | number: "1.1-1" }}</mat-card-subtitle>
+      <mat-card-subtitle
+        >Rating:
+        {{ movie.rating.averageValue | number : "1.1-1" }}</mat-card-subtitle
+      >
     </mat-card-header>
     <mat-card-content>
-      <p class="rating">{{ movie.description | textShorten: 200}}</p>
+      <p class="description">{{ movie.description }}</p>
     </mat-card-content>
-    <button mat-raised-button
-    [routerLink]="['/movies', movie.id]">Details</button>
+    <button mat-raised-button [routerLink]="['/movies', movie.id]">
+      Details
+    </button>
   </mat-card>
-
+</div>

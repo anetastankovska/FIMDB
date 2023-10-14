@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieDetailsComponent } from './components/movies-list/movie-details/movie-details.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
-// import { AppRoutingModule } from "../../app-routing.module";
 
 
 const routes: Routes = [

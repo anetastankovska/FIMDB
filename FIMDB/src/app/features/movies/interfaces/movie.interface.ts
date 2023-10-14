@@ -1,11 +1,11 @@
 export interface Movie {
   id: string;
   name: string;
-  genre: string[];
-  description: string;
+  genre: string;
   director: string;
   year: number;
-  rating: Rating;
+  description: string;
+  rating: Rating; 
   imageUrl: string;
 }
 
@@ -15,5 +15,5 @@ export interface Rating {
 }
 
 export interface UserRating {
-    ratingValue: number;
+  ratingValue: number;
 }

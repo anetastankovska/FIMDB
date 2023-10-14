@@ -1,0 +1,16 @@
+@use '../../../../styles.scss';
+
+.not-found-container {
+    text-align: center;
+    margin: 100px auto;
+
+    h1 {
+        font-size: 36px;
+        color: styles.$color-danger;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+  

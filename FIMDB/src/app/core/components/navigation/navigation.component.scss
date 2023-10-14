@@ -2,6 +2,7 @@
 
 .mat-toolbar {
 
+
   img {
     height: 100%;
   }
@@ -15,8 +16,6 @@
     margin: 2em;
     display: block;
     float: left;
-    // padding: 2em;
-    // margin-right: 2em;
     transition: all 0.2s;
 
     &:hover, &.active {

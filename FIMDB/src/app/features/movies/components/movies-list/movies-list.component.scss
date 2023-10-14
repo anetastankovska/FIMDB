@@ -1,5 +1,17 @@
 @use '../../../../../styles.scss';
 
+
 .movies-container {
-    @include styles.flex-center();
+
+    min-height: 72%;
+    
+    .movies-card-container {
+        @include styles.flex-center();
+    }
+    
+    mat-spinner {
+        margin: 0 auto;
+        width: 16vh !important;
+        height: 18vh !important;
+    }
 }

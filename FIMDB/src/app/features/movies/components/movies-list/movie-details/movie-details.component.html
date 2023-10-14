@@ -1,50 +1,58 @@
-<div *ngIf="movie" class="movie-details-container">
-  <button mat-raised-button routerLink="/movies"><- Back</button>
-  <div class="movie-details-header">
-    <h2>{{ movie.name }}</h2>
-    <div class="chips-container">
-      <mat-chip-listbox>
-        <mat-chip *ngFor="let genre of movie.genre">{{ genre }}</mat-chip>
-      </mat-chip-listbox>
+<div class="movie-details-container">
+  <div *ngIf="movie" class="movie-details">
+    <button mat-raised-button routerLink="/movies"><- Back</button>
+    <div class="movie-details-header">
+      <h2>{{ movie.name }}</h2>
+      <div class="chips-container">
+        <mat-chip-listbox>
+          <mat-chip *ngFor="let genre of movie.genre">{{ genre }}</mat-chip>
+        </mat-chip-listbox>
+      </div>
+      <p>
+        Year <span>{{ movie.year }}</span>
+      </p>
+      <p>
+        Director <span>{{ movie.director }}</span>
+      </p>
     </div>
-    <p>Year <span>{{ movie.year }}</span></p>
-    <p>Director <span>{{ movie.director }}</span></p>
-  </div>
-  <div class="movie-details-content">
-    <p>{{ movie.description }}</p>
-    
-    <div class="rating">
-      <ng-container *ngFor="let n of starSequence(fullStars); let i = index">
-        <mat-icon class="star-icon">star</mat-icon>
-      </ng-container>
-      <mat-icon class="star-icon" *ngIf="halfStar">star_half</mat-icon>
-      <p *ngIf="movie.rating">{{ movie.rating.averageValue | number: "1.1-1" }}</p>
-    </div>   
-    
-    <mat-card class="vote-card">
-      <mat-card-content>
-        <h2>Rate Movie</h2>
-        <div class="label-container">
-          <label class="name-label">Your rating:</label>
-          <label class="value-label">{{ slider.value }}</label>
-        </div>
-        <mat-slider
-          [max]="10"
-          [min]="1"
-          [step]="0.1"
-          [discrete]="false"
-          [showTickMarks]="true"
+    <div class="movie-details-content">
+      <p>{{ movie.description }}</p>
+
+      <div class="rating">
+        <ng-container *ngFor="let n of starSequence(fullStars); let i = index">
+          <mat-icon class="star-icon">star</mat-icon>
+        </ng-container>
+        <mat-icon class="star-icon" *ngIf="halfStar">star_half</mat-icon>
+        <p *ngIf="movie.rating">
+          {{ movie.rating.averageValue | number : "1.1-1" }}
+        </p>
+      </div>
+
+      <mat-card class="vote-card">
+        <mat-card-content>
+          <h2>Rate Movie</h2>
+          <div class="label-container">
+            <label class="name-label">Your rating:</label>
+            <label class="value-label">{{ slider.value }}</label>
+          </div>
+          <mat-slider
+            [max]="10"
+            [min]="1"
+            [step]="0.1"
+            [discrete]="false"
+            [showTickMarks]="true"
+          >
+            <input matSliderThumb #slider />
+          </mat-slider>
+        </mat-card-content>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="submitVote(movie.id, slider.value)"
         >
-          <input matSliderThumb #slider />
-        </mat-slider>
-      </mat-card-content>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="submitVote(movie.id, slider.value)"
-      >
-        Submit rating
-      </button>
-    </mat-card>
+          Submit rating
+        </button>
+      </mat-card>
+    </div>
   </div>
 </div>
